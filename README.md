@@ -1,2 +1,1 @@
-# carparts-manager
-Webová aplikácia na správu inventára auto-dielov
+Praktické zadanie v Laraveli
