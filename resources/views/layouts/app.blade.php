@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Webová aplikácia na správu inventára auto-dielov v Laraveli">
+    <meta name="keywords" content="laravel, inventar, auto, diely">
+    <meta name="author" content="Bc. Lukáš Maár">
+    <meta name="robots" content="index, follow">
     <title>@yield('title', 'AutoDiely')</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
