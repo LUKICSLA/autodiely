@@ -39,7 +39,7 @@ class CarController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'registration_number' => 'required_if:is_registered,1|unique:cars,registration_number',
+            'registration_number' => 'required_if:is_registered,1',
             'is_registered' => 'boolean',
         ]);
 
