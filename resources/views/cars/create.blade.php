@@ -18,11 +18,11 @@
             @csrf
             <div class="mb-3">
                 <label for="name" class="form-label">Názov auta</label>
-                <input type="text" pattern="^[A-Za-z\s]+$" class="form-control" id="name" name="name" value="{{ old('name') }}" required>
+                <input type="text" pattern="^[A-Za-z0-9\s]+$" class="form-control" id="name" name="name" value="{{ old('name') }}" placeholder="Napríklad Značka X1" required>
             </div>
 
             <div class="mb-3">
-                <label for="is_registered" class="form-label">Registrované</label>
+                <label for="is_registered" class="form-label">Je registrované?</label>
                 <select class="form-control" id="is_registered" name="is_registered" onchange="toggleRegistrationNumber()">
                     <option value="0">Nie</option>
                     <option value="1">Áno</option>
@@ -31,7 +31,7 @@
 
             <div class="mb-3" id="registration_number_field" style="display: none;">
                 <label for="registration_number" class="form-label">Registračné číslo</label>
-                <input type="number" class="form-control" id="registration_number" maxlength="17" name="registration_number" value="{{ old('registration_number') }}">
+                <input type="number" class="form-control" id="registration_number" maxlength="17" value=0 name="registration_number" placeholder="Napríklad 1234567890" value="{{ old('registration_number') }}">
             </div>
 
             <button type="submit" class="btn btn-success">Uložiť</button>

@@ -18,16 +18,16 @@
             @csrf
             <div class="mb-3">
                 <label for="name" class="form-label">Názov dielu</label>
-                <input type="text" pattern="^[A-Za-z\s]+$" class="form-control" id="name" name="name" required>
+                <input type="text" pattern="^[A-Za-z0-9\s]+$" class="form-control" id="name" name="name" placeholder="Napríklad motor" required>
             </div>
 
             <div class="mb-3">
                 <label for="serialnumber" class="form-label">Serióve číslo</label>
-                <input type="number" maxlength="17" class="form-control" id="serialnumber" name="serialnumber" required>
+                <input type="number" maxlength="17" class="form-control" id="serialnumber" name="serialnumber" placeholder="Napríklad 1234567890" required>
             </div>
 
             <div class="mb-3">
-                <label for="car_id" class="form-label">Auto</label>
+                <label for="car_id" class="form-label">Pre ktoré auto?</label>
                 <select name="car_id" class="form-control">
                     <option value="">Vyber auto</option>
                     @foreach ($cars as $car)
