@@ -8,7 +8,7 @@
         <form action="{{ route('parts.index') }}" method="GET" class="mb-3">
             <div class="row">
                 <div class="col-md-4">
-                    <input type="text" name="search" class="form-control" placeholder="Hľadať diel" value="{{ request()->get('search') }}">
+                    <input type="text" name="search" class="form-control" placeholder="Názov dielu (napríklad motor)" value="{{ request()->get('search') }}">
                 </div>
                 <div class="col-md-4">
                     <select name="car_id" class="form-control">
@@ -59,6 +59,6 @@
             </tbody>
         </table>
 
-        {{ $parts->appends(request()->query())->links() }}
+        {{ $parts->appends(request()->query())->links() }} <!-- strankovanie -->
     </div>
 @endsection
