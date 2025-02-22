@@ -50,11 +50,11 @@
                         <td>{{ $car->is_registered ? 'Áno' : 'Nie' }}</td> <!-- Ak je registrované, zobrazí sa Áno, inak Nie -->
                         <td>
                             <a href="{{ route('cars.edit', $car->id) }}" class="btn btn-warning btn-sm">Upraviť</a>
-                            <form action="{{ route('cars.destroy', $car->id) }}" method="POST" style="display:inline;">
+                            @if (Auth::check()) <form action="{{ route('cars.destroy', $car->id) }}" method="POST" style="display:inline;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Ste si istý, že chcete zmazať toto auto?')">Zmazať</button>
-                            </form>
+                            </form> @endif
                         </td>
                     </tr>
                 @endforeach

@@ -48,11 +48,11 @@
                         <td>{{ $part->car->name }} - {{ $part->car->registration_number }}</td>
                         <td>
                             <a href="{{ route('parts.edit', $part->id) }}" class="btn btn-warning btn-sm">Upraviť</a>
-                            <form action="{{ route('parts.destroy', $part->id) }}" method="POST" style="display:inline-block;">
+                            @if (Auth::check()) <form action="{{ route('parts.destroy', $part->id) }}" method="POST" style="display:inline-block;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Si si istý, že chceš zmazať tento diel?')">Zmazať</button>
-                            </form>
+                            </form> @endif
                         </td>
                     </tr>
                 @endforeach
