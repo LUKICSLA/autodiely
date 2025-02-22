@@ -6,10 +6,11 @@
 
         <!-- Filtrovanie -->
         <form method="GET" action="{{ route('cars.index') }}" class="mb-4">
-            <div class="row">
+            @csrf
+            <div class="row align-items-end">
                 <div class="col-md-3">
                     <label for="name" class="form-label">Názov auta</label>
-                    <input type="text" name="name" class="form-control" placeholder="Názov auta (značka)" value="{{ request('name') }}">
+                    <input type="text" pattern="^[A-Za-z\s]+$" name="name" class="form-control" placeholder="Názov auta (značka)" value="{{ request('name') }}">
                 </div>
 
                 <div class="col-md-3">
