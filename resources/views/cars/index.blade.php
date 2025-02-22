@@ -62,6 +62,9 @@
             </tbody>
         </table>
 
-        {{ $cars->links() }}
+        <!-- stránkovanie -->
+        <div class="d-flex justify-content-center">
+            {{ $cars->links('pagination::bootstrap-4') }}
+        </div>
     </div>
 @endsection

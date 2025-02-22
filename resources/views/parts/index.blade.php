@@ -62,6 +62,9 @@
             </tbody>
         </table>
 
-        {{ $parts->appends(request()->query())->links() }} <!-- strankovanie -->
+        <!-- Stránkovanie -->
+        <div class="d-flex justify-content-center">
+            {{ $parts->links('pagination::bootstrap-4') }}
+        </div>
     </div>
 @endsection
