@@ -38,8 +38,8 @@ class CarController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'registration_number' => 'required_if:is_registered,1',
+            'name' => 'required|string|max:255',
+            'registration_number' => 'required_if:is_registered,1|integer|digits_between:1,17',
             'is_registered' => 'boolean',
         ]);
 
@@ -55,8 +55,8 @@ class CarController extends Controller
     public function update(Request $request, Car $car)
     {
         $request->validate([
-            'name' => 'required',
-            'registration_number' => 'required_if:is_registered,1',
+            'name' => 'required|string|max:255',
+            'registration_number' => 'required_if:is_registered,1|integer|digits_between:1,17',
             'is_registered' => 'boolean',
         ]);
 

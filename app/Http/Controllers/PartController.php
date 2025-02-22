@@ -41,9 +41,9 @@ class PartController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'serialnumber' => 'required|unique:parts',
-            'car_id' => 'required|exists:cars,id',
+            'name' => 'required|string|max:255',
+            'serialnumber' => 'required|integer|unique:parts|digits_between:1,17',
+            'car_id' => 'required|integer|exists:cars,id',
         ]);
 
         Part::create($request->all());
@@ -59,9 +59,9 @@ class PartController extends Controller
     public function update(Request $request, Part $part)
     {
         $request->validate([
-            'name' => 'required',
-            'serialnumber' => 'required|unique:parts,serialnumber,' . $part->id,
-            'car_id' => 'required|exists:cars,id',
+            'name' => 'required|string|max:255',
+            'serialnumber' => 'required|integer|unique:parts,serialnumber|digits_between:1,17,' . $part->id,
+            'car_id' => 'required|integer|exists:cars,id',
         ]);
 
         $part->update($request->all());
