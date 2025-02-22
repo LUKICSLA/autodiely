@@ -18,7 +18,7 @@
             @csrf
             <div class="mb-3">
                 <label for="name" class="form-label">Názov dielu</label>
-                <input type="text" pattern="^[A-Za-z]+$" class="form-control" id="name" name="name" required>
+                <input type="text" pattern="^[A-Za-z\s]+$" class="form-control" id="name" name="name" required>
             </div>
 
             <div class="mb-3">

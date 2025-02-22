@@ -20,7 +20,7 @@
 
             <div class="mb-3">
                 <label for="name" class="form-label">Názov auta</label>
-                <input type="text" pattern="^[A-Za-z]+$" class="form-control" id="name" name="name" value="{{ old('name', $car->name) }}" required>
+                <input type="text" pattern="^[A-Za-z\s]+$" class="form-control" id="name" name="name" value="{{ old('name', $car->name) }}" required>
             </div>
 
             <div class="mb-3">
