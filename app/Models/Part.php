@@ -14,7 +14,7 @@ class Part extends Model {
 
     protected $fillable = ['name', 'serialnumber', 'car_id'];
 
-    public function car() {
+    public function car(): BelongsTo {          // vytvorenie relacie medzi tabulkami
         return $this->belongsTo(Car::class);
     }
 }
