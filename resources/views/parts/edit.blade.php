@@ -20,12 +20,12 @@
 
             <div class="mb-3">
                 <label for="name" class="form-label">Názov dielu</label>
-                <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $part->name) }}" required>
+                <input type="text" pattern="^[A-Za-z]+$" class="form-control" id="name" name="name" value="{{ old('name', $part->name) }}" required>
             </div>
 
             <div class="mb-3">
                 <label for="serialnumber" class="form-label">Seriové číslo</label>
-                <input type="text" class="form-control" id="serialnumber" name="serialnumber" value="{{ old('serialnumber', $part->serialnumber) }}" required>
+                <input type="number" maxlength="17" class="form-control" id="serialnumber" name="serialnumber" value="{{ old('serialnumber', $part->serialnumber) }}" required>
             </div>
 
             <div class="mb-3">

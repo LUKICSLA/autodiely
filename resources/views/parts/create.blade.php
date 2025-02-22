@@ -18,12 +18,12 @@
             @csrf
             <div class="mb-3">
                 <label for="name" class="form-label">Názov dielu</label>
-                <input type="text" class="form-control" id="name" name="name" required>
+                <input type="text" pattern="^[A-Za-z]+$" class="form-control" id="name" name="name" required>
             </div>
 
             <div class="mb-3">
                 <label for="serialnumber" class="form-label">Serióve číslo</label>
-                <input type="text" class="form-control" id="serialnumber" name="serialnumber" required>
+                <input type="number" maxlength="17" class="form-control" id="serialnumber" name="serialnumber" required>
             </div>
 
             <div class="mb-3">

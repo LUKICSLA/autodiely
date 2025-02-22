@@ -20,7 +20,7 @@
 
             <div class="mb-3">
                 <label for="name" class="form-label">Názov auta</label>
-                <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $car->name) }}" required>
+                <input type="text" pattern="^[A-Za-z]+$" class="form-control" id="name" name="name" value="{{ old('name', $car->name) }}" required>
             </div>
 
             <div class="mb-3">
@@ -33,7 +33,7 @@
 
             <div class="mb-3" id="registration_number_field" style="{{ $car->is_registered ? 'display:block;' : 'display:none;' }}">
                 <label for="registration_number" class="form-label">Registračné číslo</label>
-                <input type="text" class="form-control" id="registration_number" name="registration_number" value="{{ old('registration_number', $car->registration_number) }}">
+                <input type="number" class="form-control" id="registration_number" name="registration_number" maxlength="17" value="{{ old('registration_number', $car->registration_number) }}">
             </div>
 
             <button type="submit" class="btn btn-success">Uložiť zmeny</button>
